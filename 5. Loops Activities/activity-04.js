@@ -6,18 +6,29 @@
  * If it is, return "Yay it’s Ghostbusters". 
  * If it isn’t return "Boo! we want Ghostbusters!"
  */
-const Activity4 = isPresent => {
-    
+const Activity4 = isPresent =>
+{    
     let films = [
         "The Crow",
         "A Knight's Tale",
         `${isPresent ? "Ghostbusters" : "Cruel Intentions"}`,
         "Lord of the Rings"
     ];
-
-    console.log(films[2] === "Ghostbusters"
-        ? "Yay it's Ghostbusters"
-        : "Boo! We want Ghostbusters!");
+    
+    for (let i = 0; i < films.length; i++)
+    {
+        let film = films[i];
+        if (i != 2) 
+        {
+            console.log(film);
+            continue;
+        }
+        const addendum = (film  === "Ghostbusters")
+            ? "Yay it's Ghostbusters!"
+            : "Boo! We want Ghostbusters!";
+            
+        console.log(`${film} (${addendum})`);
+    }
 }
 
 Activity4(false);
